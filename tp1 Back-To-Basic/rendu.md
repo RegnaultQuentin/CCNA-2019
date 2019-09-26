@@ -2,6 +2,8 @@
 
 ## I. Gather informations
 
+### Récupération des données système
+
 * Récupérer une liste des cartes réseau avec leur nom, leur IP et leur adresse MAC
 ```
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
@@ -48,6 +50,19 @@ Cette route est celle de la carte enp0s3, elle est utilisée pour une connexion 
 192.168.188.1 dev enp0s8 lladdr 0a:00:27:00:00:36 REACHABLE
 Cette route est celle de la carte enp0s8, elle est utilisée pour une connexion local, la passerelle de cette route est à l'IP 192.168.188.1.
 ```
+* Récupérer la liste des ports en écoute (listening) sur la machine (TCP et UDP)
+
+```
+oui@localhost ~]$ ss -nutlp
+Netid State   Recv-Q   Send-Q         Local Address:Port     Peer Address:Port
+udp   UNCONN  0        0                  127.0.0.1:323           0.0.0.0:*
+udp   UNCONN  0        0           10.0.2.15%enp0s3:68            0.0.0.0:*
+udp   UNCONN  0        0                      [::1]:323              [::]:*
+tcp   LISTEN  0        128                  0.0.0.0:22            0.0.0.0:*
+tcp   LISTEN  0        128                     [::]:22               [::]:*
+```
+
+
 * Récupérer la liste des ports en écoute (listening) sur la machine (TCP et UDP)
 ```
 ; <<>> DiG 9.11.4-P2-RedHat-9.11.4-17.P2.el8_0.1 <<>> www.reddit.com
@@ -118,11 +133,27 @@ d.gtld-servers.net.     168695  IN      AAAA    2001:500:856e::30
 ```
 * Afficher l'état actuel du firewall
 
-
-
-### Récupération des données système
+```
+[oui@localhost ~]$ sudo firewall-cmd --list-all
+public (active)
+  target: default
+  icmp-block-inversion: no
+  interfaces: enp0s3 enp0s8
+  sources:
+  services: cockpit dhcpv6-client ssh
+  ports: 2222/tcp
+  protocols:
+  masquerade: no
+  forward-ports:
+  source-ports:
+  icmp-blocks:
+  rich rules:
+```
+Les interfaces filtrée sont enp0s3 et enp0s8, et le port est le 2222
 
 ## II. Edit configuration
+
+
 
 ### 1. Configuration cartes réseau
 
