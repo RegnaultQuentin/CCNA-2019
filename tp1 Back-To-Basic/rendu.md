@@ -26,7 +26,8 @@
        valid_lft forever preferred_lft forever
 ```
 * Déterminer si les cartes réseaux ont récupéré une IP en DHCP ou non
-    Carte enp0s3
+    
+Carte enp0s3
 ```
 DHCP4.OPTION[3]:                        expiry = 1569572886
 DHCP4.OPTION[4]:                        ip_address = 10.0.2.15
