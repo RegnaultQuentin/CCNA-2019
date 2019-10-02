@@ -158,18 +158,52 @@ Les interfaces filtrée sont enp0s3 et enp0s8, et le port est le 2222
 
 * Modifier la configuration de la carte réseau privée
 
+Ancienne ip static
+```
+TYPE=Ethernet
+BOOTPROTO=static
+DEFROUTE=yes
+NAME=enp0s8
+UUID=a275bcc6-f6e1-427a-ab62-e476aa444868
+DEVICE=enp0s8
+ONBOOT=yes
+IPADDR=192.168.188.3
+NETMASK=255.255.255.0
+```
+
+Nouvelle
+
+```
+TYPE=Ethernet
+BOOTPROTO=static
+DEFROUTE=yes
+NAME=enp0s8
+UUID=a275bcc6-f6e1-427a-ab62-e476aa444868
+DEVICE=enp0s8
+ONBOOT=yes
+IPADDR=192.168.50.3   <---
+NETMASK=255.255.255.0
+```
+
+
+
+A partir de la j'ai casser mon SSH 
 * Ajouter une nouvelle carte réseau dans un DEUXIEME réseau privé UNIQUEMENT privé
 
 
 ### 2. Serveur SSH
 
 * Modifier la configuration du système pour que le serveur SSH tourne sur le port 2222
+```
+sudo vi /etc/ssh/sshd_config
+"ici on mettra 2222 en face de Port"
+```
 
 * Analyser les trames de connexion au serveur SSH
 
 ## III. Routage simple
 
-* To Do
+### To Do
 
 - Tableau récapitulatif des IPs
 
