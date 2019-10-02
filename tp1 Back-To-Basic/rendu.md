@@ -64,7 +64,7 @@ tcp   LISTEN  0        128                     [::]:22               [::]:*
 ```
 
 
-* Récupérer la liste des ports en écoute (listening) sur la machine (TCP et UDP)
+* Récupérer la liste des DNS utilisés par la machine
 ```
 ; <<>> DiG 9.11.4-P2-RedHat-9.11.4-17.P2.el8_0.1 <<>> www.reddit.com
 ;; global options: +cmd
@@ -154,9 +154,30 @@ Les interfaces filtrée sont enp0s3 et enp0s8, et le port est le 2222
 
 ## II. Edit configuration
 
-
-
 ### 1. Configuration cartes réseau
+
+* Modifier la configuration de la carte réseau privée
+
+* Ajouter une nouvelle carte réseau dans un DEUXIEME réseau privé UNIQUEMENT privé
+
 
 ### 2. Serveur SSH
 
+* Modifier la configuration du système pour que le serveur SSH tourne sur le port 2222
+
+* Analyser les trames de connexion au serveur SSH
+
+## III. Routage simple
+
+* To Do
+
+- Tableau récapitulatif des IPs
+
+
+- Configuration (bref) de VM1 et VM2
+
+- Configuration routeur
+
+- Preuve que VM1 passe par le routeur pour joindre internet
+
+- Une (ou deux ? ;) ) capture(s) réseau ainsi que des explications qui mettent en évidence le routage effectué par le routeur
