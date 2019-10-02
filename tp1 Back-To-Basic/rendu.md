@@ -46,10 +46,10 @@ default via 10.0.2.2 dev enp0s3 proto dhcp metric 100
 Table ARP
 ```
 10.0.2.2 dev enp0s3 lladdr 52:54:00:12:35:02 STALE
-Cette route est celle de la carte enp0s3, elle est utilisée pour une connexion externe, la passerelle de cette route est à l'IP 10.0.2.2.
+Cette route est celle de la carte enp0s3, elle est utilisée pour une connexion externe, la passerelle de cette route est à l'IP 10.0.2.255.
 
 192.168.188.1 dev enp0s8 lladdr 0a:00:27:00:00:36 REACHABLE
-Cette route est celle de la carte enp0s8, elle est utilisée pour une connexion local, la passerelle de cette route est à l'IP 192.168.188.1.
+Cette route est celle de la carte enp0s8, elle est utilisée pour une connexion local, la passerelle de cette route est à l'IP 192.168.188.255.
 ```
 * Récupérer la liste des ports en écoute (listening) sur la machine (TCP et UDP)
 
@@ -190,6 +190,13 @@ NETMASK=255.255.255.0
 A partir de la j'ai casser mon SSH 
 * Ajouter une nouvelle carte réseau dans un DEUXIEME réseau privé UNIQUEMENT privé
 
+Je me suis reconnecté en ssh avec la nouvelle carte enp0s9 
+
+
+```
+
+```
+
 
 ### 2. Serveur SSH
 
@@ -205,7 +212,24 @@ sudo vi /etc/ssh/sshd_config
 
 ### To Do
 
+Mise en place d'un routage avec GNS3, il faut que je retrouve les bases c'est pas facile.
+
 - Tableau récapitulatif des IPs
+
+<table>
+  <tr>
+    <td>Machine</td><td>net1</td><td>net2</td><td>net12</td>
+  </tr>
+  <tr>
+    <td>client1</td><td>X</td><td></td><td>X</td>
+  </tr>
+  <tr>
+  <td>client2</td><td>X</td><td></td><td>X</td>
+  </tr>
+  <tr>
+    <td>routeur1</td><td></td><td>X</td><td></td>
+  </tr>
+</table>
 
 
 - Configuration (bref) de VM1 et VM2
