@@ -218,16 +218,16 @@ Mise en place d'un routage avec GNS3, il faut que je retrouve les bases c'est pa
 
 <table>
   <tr>
-    <td>Machine</td><td>net1</td><td>net2</td><td>net12</td>
+    <td>Machine</td><td>net1</td><td>net2</td>
   </tr>
   <tr>
-    <td>client1</td><td>X</td><td></td><td>X</td>
+    <td>client1</td><td></td><td>X</td>
   </tr>
   <tr>
-  <td>client2</td><td>X</td><td></td><td>X</td>
+  <td>client2</td><td>X</td><td></td>
   </tr>
   <tr>
-    <td>routeur1</td><td></td><td>X</td><td></td>
+    <td>routeur1</td><td></td><td></td>
   </tr>
 </table>
 
