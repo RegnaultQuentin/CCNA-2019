@@ -25,18 +25,53 @@
 
 * Faire communiquer les deux PCs 
     - avec un ping qui fonctionne
+        Pc1 vers Pc2
+        ```
+        PC-1> ping 10.2.1.2/24
+        84 bytes from 10.2.1.2 icmp_seq=1 ttl=64 time=0.170 ms
+        84 bytes from 10.2.1.2 icmp_seq=2 ttl=64 time=0.665 ms
+        ```
+
+        Pc2 vers Pc1
+        ```
+        PC-2> ping 10.2.1.1/24
+        84 bytes from 10.2.1.1 icmp_seq=1 ttl=64 time=0.947 ms
+        84 bytes from 10.2.1.1 icmp_seq=2 ttl=64 time=0.336 ms
+        ```
+        
         * déterminer le protocole utilisé par ping à l'aide de Wireshark
+
+            Le protocole utilisé par le ping est le protocole ICMP "Internet Control Message Protocol
 
     - analyser les échanges ARP
         * utiliser Wireshark et mettre en évidence l'échange ARP entre les deux machines (ARP Request et ARP Reply)
+
+            <img src="https://cdn.discordapp.com/attachments/582825013690892290/629270154685054978/unknown.png">
+
         * corréler avec les tables ARP des différentes machines
 
+            Table ARP Pc1
+            ```
+            PC-1> show arp
+
+            00:50:79:66:68:01  10.2.1.2 expires in 114 seconds
+            ```
+
+            Table ARP Pc2
+
+            ```
+            PC-2> show arp
+            
+            00:50:79:66:68:00  10.2.1.1 expires in 114 seconds
+            ```
 
 
 
 * Récapituler toutes les étapes (dans le compte-rendu, à l'écrit) quand PC1 exécute ping PC2 pour la première fois
     - échanges ARP
+        Les échanges ARP servent à recupérer les informations du corespont lors du ping et les stock pendant 120 secondes
     - échange ping
+        
 
 
 
