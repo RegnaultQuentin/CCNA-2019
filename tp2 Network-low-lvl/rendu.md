@@ -21,6 +21,8 @@
 
 * Mettre en place la topologie ci-dessus
 
+<img src="https://cdn.discordapp.com/attachments/582825013690892290/629265229192101888/unknown.png">
+
 * Faire communiquer les deux PCs 
     - avec un ping qui fonctionne
         * déterminer le protocole utilisé par ping à l'aide de Wireshark
