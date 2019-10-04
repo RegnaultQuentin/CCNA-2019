@@ -69,7 +69,8 @@
 
 * Récapituler toutes les étapes (dans le compte-rendu, à l'écrit) quand PC1 exécute ping PC2 pour la première fois
     - échanges ARP
-        Les échanges ARP servent à recupérer les informations du corespont lors du ping et les stock pendant 120 secondes
+        /Les échanges ARP servent à recupérer les informations du corespont lors du ping et les stock pendant 120 secondes
+        (expliquer ce qu'il ce passe lors d'un ping)
     - échange ping
 
 
