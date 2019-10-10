@@ -162,7 +162,7 @@
 
 * Analyser la table MAC d'un switch
     - show mac address-table
-    
+    ```
       IOU3#show mac address-table
           Mac Address Table
 -------------------------------------------
@@ -172,9 +172,6 @@ Vlan    Mac Address       Type        Ports
    1    aabb.cc00.0200    DYNAMIC     Et0/2
    1    aabb.cc00.0400    DYNAMIC     Et0/1
    1    aabb.cc00.0420    DYNAMIC     Et0/2
-
-
-    - comprendre/expliquer chaque ligne
 
 * En lançant Wireshark sur les liens des switches, il y a des trames CDP qui circulent. Quoi qu'est-ce ?
 
