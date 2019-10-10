@@ -196,17 +196,16 @@
 | PC1 +--------+  SW1  +--------+  SW3  +--------+ PC3 |
 +-----+        +-------+        +-------+        +-----+
 
-SW2 = Root bridge 
-  Tous les ports designated forward
-SW1
-  Et0/2 root vers SW2
-  Tous les autres designated forward
+SW2 = Root bridge <br> 
+  Tous les ports designated forward <br>
+SW1<br>
+  Et0/2 root vers SW2<br>
+  Tous les autres designated forward<br>
 
-SW3
-  Et0/0 Alternate vers SW1 (c'est un chemin alternatif)
-  Et0/2  root vers SW2
-  Tous les autres designated forward
-    ```
+SW3<br>
+  Et0/0 Alternate vers SW1 (c'est un chemin alternatif)<br>
+  Et0/2  root vers SW2<br>
+  Tous les autres designated forward<br>
 
 * Confirmer les informations STP
     - effectuer un ping d'une machine à une autre
