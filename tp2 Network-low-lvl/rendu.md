@@ -162,21 +162,18 @@
 
 * Analyser la table MAC d'un switch
     - show mac address-table
-    ```
-      IOU3#show mac address-table
-          Mac Address Table
--------------------------------------------
-
-Vlan    Mac Address       Type        Ports
-----    -----------       --------    -----
-   1    aabb.cc00.0200    DYNAMIC     Et0/2
-   1    aabb.cc00.0400    DYNAMIC     Et0/1
-   1    aabb.cc00.0420    DYNAMIC     Et0/2
-
+      
+      <img src="https://cdn.discordapp.com/attachments/582825013690892290/631767082475716608/unknown.png">
+      (Déso le copié/collé mettait en pls mes balises)
+    - comprendre/expliquer chaque ligne
+      * Type de lan
+      * Adresse Mac
+      * Type d'adresse (dynamique ou non)
+      * Ports utilisé  
 * En lançant Wireshark sur les liens des switches, il y a des trames CDP qui circulent. Quoi qu'est-ce ?
+  - C'est un protocole cisco qui permet de trouver les péripheriques connecté directement.
 
 ### Mise en évidence du Spanning Tree Protocol
-
 
 * Déterminer les informations STP
     - à l'aide des commandes dédiées au protocole
@@ -184,12 +181,46 @@ Vlan    Mac Address       Type        Ports
 * Faire un schéma en représentant les informations STP
     - rôle des switches (qui est le root bridge)
     - rôle de chacun des ports
+    ```
+                        +-----+
+                        | PC2 |
+                        +--+--+
+                           |
+                           |
+                       +---+---+ 
+                   +---+  SW2  +----+
+                   |   +-------+    |
+                   |                |
+                   |                |
++-----+        +---+---+        +---+---+        +-----+
+| PC1 +--------+  SW1  +--------+  SW3  +--------+ PC3 |
++-----+        +-------+        +-------+        +-----+
 
+SW2 = Root bridge 
+  Tous les ports designated forward
+SW1
+  Et0/2 root vers SW2
+  Tous les autres designated forward
 
+SW3
+  Et0/0 Alternate vers SW1 (c'est un chemin alternatif)
+  Et0/2  root vers SW2
+  Tous les autres designated forward
+    ```
 
 * Confirmer les informations STP
     - effectuer un ping d'une machine à une autre
     - vérifier que les trames passent bien par le chemin attendu (Wireshark)
+
+    Pc1 ping Pc3
+    SW1 vers SW2
+    <img src ="https://cdn.discordapp.com/attachments/582825013690892290/631788772144447489/unknown.png">
+
+    SW2 vers SW3
+    <img src="https://cdn.discordapp.com/attachments/582825013690892290/631789343446532096/unknown.png">
+
+    SW1 vers SW3 
+    Aucune trames du ping passe par ici
 
 
 
