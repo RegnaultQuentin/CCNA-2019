@@ -181,7 +181,8 @@
 * Faire un schéma en représentant les informations STP
     - rôle des switches (qui est le root bridge)
     - rôle de chacun des ports
-    ```
+
+```
                         +-----+
                         | PC2 |
                         +--+--+
@@ -195,36 +196,37 @@
 +-----+        +---+---+        +---+---+        +-----+
 | PC1 +--------+  SW1  +--------+  SW3  +--------+ PC3 |
 +-----+        +-------+        +-------+        +-----+
+```
 
-SW2 = Root bridge <br> 
-  Tous les ports designated forward <br>
-SW1<br>
-  Et0/2 root vers SW2<br>
-  Tous les autres designated forward<br>
+* SW2 = Root bridge 
+  - Tous les ports designated forward
+* SW1
+  - Et0/2 root vers SW2
+  - Tous les autres designated forward
 
-SW3<br>
-  Et0/0 Alternate vers SW1 (c'est un chemin alternatif)<br>
-  Et0/2  root vers SW2<br>
-  Tous les autres designated forward<br>
+* SW3
+  - Et0/0 Alternate vers SW1 (c'est un chemin alternatif)
+  - Et0/2  root vers SW2
+  - Tous les autres designated forward
 
 * Confirmer les informations STP
     - effectuer un ping d'une machine à une autre
     - vérifier que les trames passent bien par le chemin attendu (Wireshark)
 
     Pc1 ping Pc3
-    SW1 vers SW2
+    - SW1 vers SW2
     <img src ="https://cdn.discordapp.com/attachments/582825013690892290/631788772144447489/unknown.png">
 
-    SW2 vers SW3
+    - SW2 vers SW3
     <img src="https://cdn.discordapp.com/attachments/582825013690892290/631789343446532096/unknown.png">
 
-    SW1 vers SW3 
+    - SW1 vers SW3  
     Aucune trames du ping passe par ici
 
 
 
 * Ainsi, déterminer quel lien a été désactivé par STP
-
+  - Le lien SW1 vers SW3 a été désactivé. 
 * Faire un schéma qui explique le trajet d'une requête ARP lorsque PC1 ping PC3, et de sa réponse
     - Représenter TOUTES les trames ARP (n'oubliez pas les broadcasts)
 
