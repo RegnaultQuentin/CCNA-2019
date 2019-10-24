@@ -1,5 +1,7 @@
 # TP2 : Routage INTER-VLAN + mise en situation
 
+<!-- wr en switch save pour le pc -->
+
 ## I. Router-on-a-stick
 ### Tableau des réseaux
 
