@@ -20,8 +20,8 @@ Réseau | Adresse | VLAN | Description
 Réseaux | `net1` |  `net2` |  `net3` |  `netP`
 --- | --- | --- | --- | ---
  `net1` | ✅ | ❌ | ❌ | ✅
- `net2` | ❌ | ✅ | ❌ | ✅
- `net3` | ❌ | ❌ | ✅ | ✅
+ `net2` | ❌ | ✅ | ✅ | ✅
+ `net3` | ❌ | ✅ | ✅ | ✅
  `netP` | ✅ | ✅ | ✅ | ✅
 
 ### Plan d'adressage
@@ -41,7 +41,30 @@ R1 | x |  `10.3.10.254/24` | `10.3.20.254/24` | `10.3.30.254/24` | `10.3.40.254/
 * You'll need inter-VLAN routing to make it work properly
   * se référer au [mémo Cisco section sous-interface](/memo/cli-cisco.md#sous-interface)
 * 🌞 Prove me that your setup is actually working
-  * think about VLANs, `ping`, etc.
+  * think about VLANs, `ping`, etc. <br>
+
+PC1 ping PC2
+```
+  PC-1> ping 10.3.20.2
+10.3.20.4 icmp_seq=1 timeout
+10.3.20.4 icmp_seq=2 timeout
+10.3.20.4 icmp_seq=3 timeout
+10.3.20.4 icmp_seq=4 timeout
+10.3.20.4 icmp_seq=5 timeout
+```
+La même chose pour PC3 et PC4<br>
+
+PC1 ping P1
+```
+PC-1> ping 10.3.40.1
+84 bytes from 10.3.40.1 icmp_seq=1 ttl=63 time=21.937 ms
+84 bytes from 10.3.40.1 icmp_seq=2 ttl=63 time=21.404 ms
+84 bytes from 10.3.40.1 icmp_seq=3 ttl=63 time=17.255 ms
+84 bytes from 10.3.40.1 icmp_seq=4 ttl=63 time=14.213 ms
+84 bytes from 10.3.40.1 icmp_seq=5 ttl=63 time=17.414 ms
+```
+
+PC2, PC3 et PC4 peuvent se joindre entre eux et aussi l'imprimante
 
 ## II. Cas concret
 
