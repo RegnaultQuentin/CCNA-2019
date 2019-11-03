@@ -1,0 +1,28 @@
+Créer un Vlan
+
+
+(config)# vlan 10
+(config-vlan)# name client-network
+(config-vlan)# exit
+
+
+
+Donner un Vlan à une interface
+
+(config)# interface Ethernet 0/0
+(config-if)# switchport mode access
+(config-if)# switchport access vlan 10
+
+Mode trunk entre les switch (et le routeur) 
+
+(config)# interface Ethernet 0/0
+(config-if)# switchport trunk encapsulation dot1q
+(config-if)# switchport mode trunk
+
+! pour n'autoriser que les VLAN 10 et 20 sur le trunk
+(config-if)# switchport trunk allowed vlan 10,20 
+
+Pour un routeur 
+(mettre une ip sur une interface)
+(config)# interface ethernet <NUMERO>
+(config-if)# ip address <IP> <MASK>
