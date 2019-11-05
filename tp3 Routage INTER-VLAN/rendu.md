@@ -133,6 +133,7 @@ Imprimantes | ✅ | ✅ | ✅ | ✅ | ❌ | ✅ |
 * documentez ce que vous faites au fur et à mesure
 * n'oubliez pas de sauvegarder la configuration des équipements réseau et celle des VPCS
 
+
 ---
 
 **Bonus**
@@ -145,3 +146,6 @@ Imprimantes | ✅ | ✅ | ✅ | ✅ | ❌ | ✅ |
     * permettre l'attribution d'IPs pour tous les PCs clients (admins, users, stagiaires)
     * libre choix de l'OS (m'enfin, déconnez pas, on va pas mettre un Windows Server 2016 si ?...)
   * mise en place d'un test avec l'ajout d'un nouveau client
+
+  Tableau des IP 
+  <img src="https://cdn.discordapp.com/attachments/582825013690892290/641267374015643668/unknown.png">
